@@ -1,0 +1,35 @@
+package com.payment;
+
+public class payment {
+	     
+	private String PaymentID;
+	private String CardHoldersName;
+	private String CardNumber;
+	private String SecurityCode;
+	private String ExpireDate;
+	public payment(String paymentID, String CardHoldersName, String CardNumber, String securityCodeS, String ExpireDate) {
+		
+		this.PaymentID = paymentID;
+	    this.CardHoldersName=CardHoldersName;
+	    this.CardNumber = CardNumber;
+	    this.SecurityCode = securityCodeS;
+	    this.ExpireDate = ExpireDate;
+	    
+	}
+	public String getPaymentID() {
+		return PaymentID;
+	}
+	public String getCardHoldersName() {
+		return CardHoldersName;
+	}
+	public String getCardNumber() {
+		return CardNumber;
+	}
+	public String getSecurityCode() {
+		return SecurityCode;
+	}
+	public String getExpireDate() {
+		return ExpireDate;
+	}
+
+}

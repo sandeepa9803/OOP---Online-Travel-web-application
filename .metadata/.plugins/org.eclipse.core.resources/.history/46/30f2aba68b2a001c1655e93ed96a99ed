@@ -1,0 +1,89 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<style>
+
+table, td, th {  
+  border: 1px solid #802b00;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+}
+
+th, td {
+  padding: 20px;
+}
+
+
+.button {
+  background-color: #4CAF50;
+  border: 1;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+   font-weight: bold;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    
+    <%
+      String PaymentID=request.getParameter("PaymentID");
+      String CardHoldersName=request.getParameter("CardHoldersName");
+      String CardNumber=request.getParameter("CardNumber");
+      String SecurityCode = request.getParameter("SecurityCode");
+      String ExpireDate=request.getParameter("ExpireDate");
+   %>
+   
+      <h1>Payment Details Delete </h1>
+      
+    <form action="delete" method ="post" >
+    Payment ID <input type ="number" name="paymentid" value="<%=PaymentID%>" readonly><br>
+    Card Holder's Name <input type ="text" name="cardholder" value="<%=CardHoldersName%>" readonly><br>
+    Card Number <input type ="number" name="cardnum" value="<%=CardNumber%>" readonly><br>
+    Security Number <input type ="number" name="cvcnum" value="<%=SecurityCode%>" readonly><br>
+    Expire Date <input type ="date" name="date" value="<%=ExpireDate%>" readonly><br>
+    
+    <input type ="submit" name="submit" value="Delete Payment Details"><br>
+    </form>
+    
+    
+    
+    
+    
+    
+</body>
+</html>

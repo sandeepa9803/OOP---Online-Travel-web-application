@@ -1,0 +1,96 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+
+
+       <style>
+
+table, td, th {  
+  border: 1px solid #802b00;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  border:solid black ;
+   font-family:"Courier New", Courier, monospace;
+    font-size:200%;
+}
+
+th, td {
+  padding: 20px;
+}
+
+
+.button {
+  background-color: #1F618D;
+  border: 1;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+   font-weight: bold;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius:12px;
+  }
+  
+
+ h1 {font-family: 'Quicksand';font-size: 50px;
+eeee
+
+
+
+</style>
+   
+
+
+
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+   <h1>Insert Payment Details</h1>
+ 
+    <form action="insert" method ="post">
+    
+      <table>
+        
+        <tr>
+        <td> Card Holder Name </td>
+        <td> <input type = "text" name = "cardholder"> </td>
+        </tr>
+        
+        <tr>
+        <td> Card Number </td>
+        <td> <input type ="number" name = "cardnum"> </td>
+        </tr>
+        
+        <tr>
+        <td> Security Code </td>
+        <td> <input type ="number" name = "cvcnum"> </td>
+        </tr>
+        
+        <tr>
+        <td> Expire Date </td>
+        <td> <input type = "date"  name = "date"> </td>
+        </tr>
+         
+        </table>
+        <br>
+         
+         <input type ="submit"  name="submit"  value ="Make Payment" class="button" >
+ 
+    
+    
+    </form>
+
+</body>
+</html>

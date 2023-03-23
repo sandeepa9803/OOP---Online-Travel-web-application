@@ -1,0 +1,86 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <table>
+    <c:forEach var="pay" items="${paydetails}">
+    
+     <c:set var="PaymentID" value="${pay.getPaymentID()}" />
+     <c:set var="CardHoldersName" value="${pay.getCardHoldersName()}" />
+     <c:set var="CardNumber"  value="${pay.getCardNumber()}" />
+     <c:set var="SecurityCode" value="${pay.getSecurityCode()}" />
+     <c:set var="ExpireDate" value="${pay.getExpireDate()}" />
+	 
+         
+    
+    <tr>
+    <td> Payment ID </td>
+    <td>${pay.getPaymentID()}</td>
+    </tr>
+    
+    
+    <tr>
+    <td> Card Holders Name </td>
+    <td>${pay.getCardHoldersName()}</td>
+    </tr>
+    
+    
+    <tr>
+    <td> Card Number </td>
+    <td>${pay.getCardNumber()}</td>
+    </tr>
+    
+    
+     <tr>
+     <td> Security Code </td>
+     <td>${pay.getSecurityCode()} </td>
+    </tr>
+    
+    
+    <tr>
+    <td> Expire Date </td>
+    <td>${pay.getExpireDate()} </td>
+    </tr>
+    
+    </c:forEach>
+   </table>
+   
+   
+    <c:url value="updatepayment.jsp"  var="payupdate">
+    <c:param name="PaymentID"   value="${PaymentID}" />
+    <c:param name="CardHoldersName"  value="${CardHoldersName}" />
+    <c:param name="CardNumber"  value="${CardNumber}" />
+    <c:param name="SecurityCode"  value="${SecurityCode}" />
+    <c:param name="ExpireDate"  value="${ExpireDate}" />
+   </c:url>
+   
+      <a href="${payupdate}" >
+      <input type ="button" name="update" value="Update Payment Details">
+      </a>
+         
+      <br>
+      
+      <c:url value="deletecustomer.jsp" var="paydelete">
+        <c:param name="PaymentID" value="${PaymentID}" />
+        <c:param name="CardHoldersName" value="${CardHoldersName}" />
+        <c:param name="CardNumber" value="${CardNumber}" />
+        <c:param name="SecurityCode" value="${SecurityCode}" />
+        <c:param name="ExpireDate" value="${ExpireDate}" />
+      </c:url>
+      
+      <a href ="${paydelete}">
+      <input type = "button" name = "delete" value="Delete Payment Details" >  
+       </a>
+         
+         
+         
+         
+
+</body>
+</html>

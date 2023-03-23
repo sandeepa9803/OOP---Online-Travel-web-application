@@ -1,0 +1,154 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+
+<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+
+
+<style>
+
+.button {
+  background-color:#1F618D;
+  border: 1;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+
+
+.button1 {
+  background-color: #ff0000;
+  border: 1;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius:12px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+   border:solid black ;
+   font-family:"Courier New", Courier, monospace;
+    font-size:200%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  text-align:center;
+}
+
+tr:nth-child(even) {background-color: #AF675A;
+text-align:center;}
+
+h1 {text-align: center;
+     font-family: 'Quicksand';font-size: 50px}
+
+body {
+background-color:#A9CCE3  }
+
+</style>
+
+
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body >
+
+<h1> Welcome Member!!! <br>Payment Details</h1>
+
+
+
+<table border=6>
+    
+    <c:forEach var="pay" items="${paydetails}">
+    
+     <c:set var="PaymentID" value="${pay.getPaymentID()}" />
+     <c:set var="CardHoldersName" value="${pay.getCardHoldersName()}" />
+     <c:set var="CardNumber"  value="${pay.getCardNumber()}" />
+     <c:set var="SecurityCode" value="${pay.getSecurityCode()}" />
+     <c:set var="ExpireDate" value="${pay.getExpireDate()}" />
+	 
+         
+    
+    <tr>
+    <td> Payment ID </td>
+    <td>${pay.getPaymentID()}</td>
+    </tr>
+    
+    
+    <tr>
+    <td> Card Holders Name </td>
+    <td>${pay.getCardHoldersName()}</td>
+    </tr>
+    
+    
+    <tr>
+    <td> Card Number </td>
+    <td>${pay.getCardNumber()}</td>
+    </tr>
+    
+    
+     <tr>
+     <td> Security Code </td>
+     <td>${pay.getSecurityCode()} </td>
+    </tr>
+    
+    
+    <tr>
+    <td> Expire Date </td>
+    <td>${pay.getExpireDate()} </td>
+    </tr>
+    
+    </c:forEach>
+   </table>
+   
+   
+    <c:url value="updatepayment.jsp"  var="payupdate">
+    <c:param name="PaymentID"   value="${PaymentID}" />
+    <c:param name="CardHoldersName"  value="${CardHoldersName}" />
+    <c:param name="CardNumber"  value="${CardNumber}" />
+    <c:param name="SecurityCode"  value="${SecurityCode}" />
+    <c:param name="ExpireDate"  value="${ExpireDate}" />
+   </c:url>
+   
+      <a href="${payupdate}" >
+      <input type ="button" name="update" value="Update Payment Details" class="button">
+      </a>
+         
+      <br>
+      
+      <c:url value="deletepayment.jsp" var="paydelete">
+        <c:param name="PaymentID" value="${PaymentID}" />
+        <c:param name="CardHoldersName" value="${CardHoldersName}" />
+        <c:param name="CardNumber" value="${CardNumber}" />
+        <c:param name="SecurityCode" value="${SecurityCode}" />
+        <c:param name="ExpireDate" value="${ExpireDate}" />
+      </c:url>
+      
+      <a href ="${paydelete}">
+      <input type = "button" name = "delete" value="Delete Payment Details"  class="button1">  
+       </a>
+         
+         
+         
+         
+
+</body>
+</html>

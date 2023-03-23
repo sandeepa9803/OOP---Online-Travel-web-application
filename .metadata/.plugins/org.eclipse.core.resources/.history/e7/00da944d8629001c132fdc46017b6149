@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+   <%
+      String PaymentID=request.getParameter("PaymentID");
+      String CardHoldersName=request.getParameter("CardHoldersName");
+      String CardNumber=request.getParameter("CardNumber");
+      String SecurityCode=request.getParameter("SecurityCode");
+      String ExpireDate=request.getParameter("ExpireDate");
+   %>
+    
+    <form action="#" method ="post" >
+    Payment ID <input type ="number" name="paymentid" value="<%=PaymentID%>"> <br>
+    Card Holders Name <input type ="text" name="cardholder" value="<%=CardHoldersName%>"><br>
+    Card Number <input type ="number" name="cardnum" value="<%=CardNumber%>"><br>
+    Security Number <input type ="number" name="cvcnum" value="<%=SecurityCode%>"><br>
+    Expire Date <input type ="date" name="date" value="<%=ExpireDate%>"><br>
+    
+    <input type ="submit" name="submit" value="Update My Data"><br>
+    </form>
+
+</body>
+</html>

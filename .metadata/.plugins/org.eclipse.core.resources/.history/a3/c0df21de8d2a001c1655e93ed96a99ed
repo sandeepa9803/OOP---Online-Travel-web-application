@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ 
+    <form action="insert" method ="post">
+        
+         Card Holders Name <input type = "text" name = "cardholder"><br>
+         Card Number <input type ="number" name = "cardnum"> <br>
+         Security Code <input type ="number" name = "cvcnum"> <br>
+         Expire Date <input type = "date"  name = "date">  <br>
+         
+         <input type ="submit"  name="submit"  value ="Make Payment" >
+ 
+    
+    
+    </form>
+
+</body>
+</html>
